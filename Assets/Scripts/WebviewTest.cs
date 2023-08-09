@@ -44,11 +44,11 @@ public class WebviewTest : MonoBehaviour
         {
             InitializeWebview();
 
-						byte[] bytesToEncode = Encoding.UTF8.GetBytes ("{data:\"name\",unique_identifier:\"aad\"}");
-						string encodedText = Convert.ToBase64String (bytesToEncode);
+            byte[] bytesToEncode = Encoding.UTF8.GetBytes ("{data:\"name\",unique_identifier:\"aad\"}");
+            string encodedText = Convert.ToBase64String (bytesToEncode);
 
-						webview.Load($"{url}/{encodedText}");
-					}
+            webview.Load($"{url}/{encodedText}");
+        }
     }
 
     void CloseWebView()
@@ -67,11 +67,11 @@ public class WebviewTest : MonoBehaviour
         if (webview == null)
         {
             InitializeWebview();
-            
-						byte[] bytesToEncode = Encoding.UTF8.GetBytes ("{data:\"name\",unique_identifier:\"aad\"}");
-						string encodedText = Convert.ToBase64String (bytesToEncode);
 
-						webview.Load($"{url}/{encodedText}");
+            byte[] bytesToEncode = Encoding.UTF8.GetBytes ("{data:\"name\",unique_identifier:\"aad\"}");
+            string encodedText = Convert.ToBase64String (bytesToEncode);
+
+            webview.Load($"{url}/{encodedText}");
         }
     }
 }
