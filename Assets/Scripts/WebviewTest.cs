@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class WebviewTest : MonoBehaviour
 {
-	public string url = "https://catalyst-web-client.vercel.app/contest/";
+	private string url = "https://catalyst-web-client.vercel.app/contest/";
     public bool showToolbar = true;
     private UniWebView webview;
 
