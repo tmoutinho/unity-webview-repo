@@ -28,10 +28,25 @@ public class WebviewTest : MonoBehaviour
             webview.Frame = new Rect(0, 0, Screen.width, Screen.height);
             webview.ReferenceRectTransform = transform as RectTransform;
             
-            if (showToolbar)
-                webview.EmbeddedToolbar.Show();
+            if (showToolbar) {
 
-            webview.OnPageFinished += (view, statusCode, url) => { Debug.Log("Page Load Finished: " + url); };
+                webview.EmbeddedToolbar.Show();
+                webview.EmbeddedToolbar.HideNavigationButtons();
+                webview.EmbeddedToolbar.SetDoneButtonText("Close");
+                webview.EmbeddedToolbar.SetBackgroundColor(Color.white);
+                webview.EmbeddedToolbar.SetTitleText("Conductive.ai");
+            }
+
+
+            webview.OnPageFinished += (view, statusCode, url) => {
+                Debug.Log("Page Load Finished: " + url);
+
+                webview.EvaluateJavaScript("startGame();", (payload)=>{
+                    Debug.Log("Clicked function");
+                });
+            };
+
+            webview.OnPageFinished += (view, statusCode, url) => {  };
         }
     }
 
