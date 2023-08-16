@@ -37,10 +37,10 @@ public class WebviewTest : MonoBehaviour
                 webview.EmbeddedToolbar.SetTitleText("Conductive.ai");
             }
 
-
             webview.OnPageFinished += (view, statusCode, url) => {
                 Debug.Log("Page Load Finished: " + url);
 
+                // this doenst work with react app
                 webview.EvaluateJavaScript("startGame();", (payload)=>{
                     Debug.Log("Clicked function");
                 });
